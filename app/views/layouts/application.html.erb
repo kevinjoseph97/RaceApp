@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RaceApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+      <%= link_to "Sign Out", signout_path, method: :delete %>
+      <%= link_to "All Tracks",  tracks_path  %>
+      <%= link_to "Me", current_driver %>
+      <%= link_to "Sign Up", signup_path%>
+    
+      <%= link_to "Sign In", signin_path%>
+   
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

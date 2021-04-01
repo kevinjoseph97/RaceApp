@@ -1,0 +1,10 @@
+<h2>Here are all the tracks</h2>
+
+<ul>
+<% Track.all.each do |track| %>
+   <li><%= link_to "#{track.name}", track %></li>
+<% end %>
+</ul>
+
+
+

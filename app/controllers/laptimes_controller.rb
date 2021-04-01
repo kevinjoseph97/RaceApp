@@ -1,0 +1,2 @@
+class LaptimesController < ApplicationController
+end
