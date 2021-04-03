@@ -36,7 +36,7 @@ class DriversController < ApplicationController
     private
 
     def driver_params
-        params.require(:driver).permit(:name, :password, :car, :racemaster)
+        params.require(:driver).permit(:name, :password)
     end
 
     def find_driver
