@@ -2,6 +2,7 @@ class TracksController < ApplicationController
 
 
     def index
+        @tracks = Track.all
     end
     
      def new 
@@ -15,8 +16,7 @@ class TracksController < ApplicationController
      end
  
      def show
-         @track = Track.find(params[:id])
-         @track_time = @track.track_times.build(driver_id: current_driver.id)
+         @track = Track.find_by(id: params[:id])
      end
  
      def edit 
