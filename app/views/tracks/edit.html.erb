@@ -1,4 +1,8 @@
 <h2>Lets change the things about this track </h2>
 
 
+<% @errors && @errors.each do |e| %>
+    <li><%=e%></li>
+
+<% end %>
 <%= render 'form' %>

@@ -1,0 +1,7 @@
+<%=form_for @laptime do |f|%>
+    <%= f.label "Time"%>
+    <%= f.number_field(:time)%>
+    <%= f.label "Track"%>
+    <%= f.collection_select(:track_id, @tracks, :id, :name)%>
+    <%= f.submit "Save"%>
+<% end %>

@@ -1,3 +1,8 @@
 <h1>Set up New Track </h1>
 
+<% @errors && @errors.each do |e| %>
+    <li><%=e%></li>
+
+<% end %>
+
 <%= render 'form'%>

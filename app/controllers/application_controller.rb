@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :authorize, :current_driver, :racemaster
+    helper_method :authorize, :current_driver
 
 
     def home 
@@ -21,9 +21,6 @@ class ApplicationController < ActionController::Base
         
     end
 
-    #set up racemaster 
-    def racemaster
-        current_driver.racemaster
-    end
+   
 
 end

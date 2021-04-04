@@ -1,22 +1,22 @@
 
-<h1> Welcome To The <%=@track.name%> In <%=@track.location%>  </h1> 
+<h1> Welcome To The <%=@track.name%> </h1> 
+
+
+<%=@track.laptimes.each do |l| %>
+    <%binding.pry%>
+    <li>l.time</li>
+<% end %><br>
 
 
 
 
-
-
-
-
+<%= link_to "Edit Track", edit_track_path(@track) %>
 
 <%# Lets show the lap times of the racers...  %>
 
-<%= button_to "Delete", track_path(@track), method: :delete %>
+<%= button_to("Delete", @track, method: :delete) %>
 
 <%# add button for adding track time with user.id %>
 
-<% if racemaster%>
-   <%= link_to "Edit Track", edit_track_path(@track)%>
-<% end %>
 
 
