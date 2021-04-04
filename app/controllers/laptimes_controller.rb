@@ -1,6 +1,13 @@
 class LaptimesController < ApplicationController
 
  
+    def index
+        @laptimes = Laptime.all
+    end
+    
+
+
+
     def new 
         @laptime = Laptime.new
         @tracks = Track.all

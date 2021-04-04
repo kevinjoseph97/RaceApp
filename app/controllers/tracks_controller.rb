@@ -12,6 +12,7 @@ class TracksController < ApplicationController
 
     def create 
         @track = Track.new(track_params)
+        binding.pry 
         if @track.save
         # binding.pry
             redirect_to track_path(@track)

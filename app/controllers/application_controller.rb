@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :authorize, :current_driver
+    helper_method :current_driver
 
 
     def home 
@@ -17,7 +17,8 @@ class ApplicationController < ActionController::Base
 
     #set up current driver 
     def current_driver 
-        @driver ||= Driver.find(session[:driver_id]) if session[:driver_id]
+        # @driver ||= Driver.find(session[:driver_id]) if session[:driver_id]
+        @current_driver= Driver.first
         
     end
 
