@@ -5,4 +5,14 @@
 
 <% end %>
 
-<%= render 'form'%>
+<%= form_for(@track) do |f| %>
+    <%= f.label("Name:") %>
+    <%= f.text_field(:name) %>
+    <%=f.label("Laptime:") %>
+    <%=f.fields_for :laptimes do |l| %>
+        <%=l.label "Time"%>
+        <%=l.number_field :time%>
+  <%end%>
+   
+    <%= f.submit %>
+<% end %> 

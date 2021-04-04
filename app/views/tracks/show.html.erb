@@ -2,14 +2,13 @@
 <h1> Welcome To The <%=@track.name%> </h1> 
 
 
-<%=@track.laptimes.each do |l| %>
-    <%binding.pry%>
-    <li>l.time</li>
+<%@track.laptimes.each do |l| %>
+    <li><%=l.time%></li>
 <% end %><br>
 
 
 
-
+<%# only is admin %>
 <%= link_to "Edit Track", edit_track_path(@track) %>
 
 <%# Lets show the lap times of the racers...  %>

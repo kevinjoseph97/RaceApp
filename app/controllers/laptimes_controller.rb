@@ -3,16 +3,14 @@ class LaptimesController < ApplicationController
  
     def new 
         @laptime = Laptime.new
-        binding.pry
         @tracks = Track.all
     end
 
 
 
     def create 
-        @laptime = Laptime.new(laptime_params)
-        @laptime.save
-        binding.pry
+        @laptime = Laptime.create(laptime_params)
+    
         redirect_to tracks_path
         
     end

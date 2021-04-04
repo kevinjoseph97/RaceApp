@@ -5,4 +5,12 @@
     <li><%=e%></li>
 
 <% end %>
-<%= render 'form' %>
+
+
+<%= form_for(@track) do |f| %>
+    <%= f.label("Name:") %>
+    <%= f.text_field(:name) %>
+    
+   
+    <%= f.submit %>
+<% end %> 

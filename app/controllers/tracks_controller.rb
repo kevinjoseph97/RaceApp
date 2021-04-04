@@ -11,8 +11,8 @@ class TracksController < ApplicationController
     end
 
     def create 
-        @track = Track.create(track_params)
-        if @track.valid?
+        @track = Track.new(track_params)
+        if @track.save
         # binding.pry
             redirect_to track_path(@track)
         else
@@ -44,13 +44,13 @@ class TracksController < ApplicationController
     def destroy
         @track = Track.find_by(id: params[:id])
         @track.delete
-        redirect_to ('/tracks')
+        redirect_to tracks_path
     end
  
  
     private 
  
     def track_params
-        params.require(:track).permit(:name)
+        params.require(:track).permit(:name, laptimes_attributes: [:time])
     end
  end
