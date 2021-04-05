@@ -3,7 +3,7 @@ class CreateLaptimes < ActiveRecord::Migration[6.1]
     create_table :laptimes do |t|
       t.integer :driver_id
       t.integer :track_id
-      t.integer :time
+      t.string :time
 
       t.timestamps
     end

@@ -5,20 +5,26 @@ class DriversController < ApplicationController
     # end
     
 
-    # def new 
-    #     @driver = Driver.new
-    # end
+    def new 
+        @driver = Driver.new
+    end
 
 
-    # def create 
-    #     @driver = Driver.create(driver_params)
-    #     redirect_to driver_path(@driver)
-    # end
+    def create 
+        @driver = Driver.new(driver_params)
+        if @driver.save
+            session[:driver_id] = @driver.id 
+            redirect_to driver_path(@driver)
+        else    
+           
+            render :new
+        end
+    end
     
 
-    # def show 
-    #     find_driver
-    # end
+    def show 
+        find_driver
+    end
 
 
     # def edit 
@@ -33,14 +39,13 @@ class DriversController < ApplicationController
 
 
 
-    # private
+    private
 
-    # def driver_params
-    #     params.require(:driver).permit(:name, :password)
-    # end
+    def driver_params
+        params.require(:driver).permit(:name, :password)
+    end
 
-    # def find_driver
-    #     @driver = Driver.find(params[:id])
-        
-    # end
+    def find_driver
+        @driver = Driver.find(params[:id])
+    end
 end

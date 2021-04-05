@@ -17,9 +17,8 @@ class ApplicationController < ActionController::Base
 
     #set up current driver 
     def current_driver 
-        # @driver ||= Driver.find(session[:driver_id]) if session[:driver_id]
-        @current_driver= Driver.first
-        
+        @current_driver ||= Driver.find(session[:driver_id]) if session[:driver_id]
+
     end
 
    
